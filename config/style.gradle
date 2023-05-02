@@ -10,7 +10,8 @@ task checkAllSource(type: Checkstyle) {
     afterEvaluate {
         source 'java'
         include '**/*.java'
-        classpath = files project.configurations.compile.files
+        // NOT COMPATIBLE WITH GRADLE 7+
+        // classpath = files project.configurations.compile.files
     }
 }
 
