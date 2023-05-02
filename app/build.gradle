@@ -8,6 +8,7 @@ android {
     defaultConfig {
         applicationId 'net.openid.appauthdemo'
         project.archivesBaseName = 'appauth-demoapp'
+        multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
 
         // Make sure this is consistent with the redirect URI used in res/raw/auth_config.json,
