@@ -39,7 +39,7 @@ task jar(type: Copy, dependsOn:'bundleRelease') {
 // produces a JAR containing sources
 task sourcesJar(type: Jar, dependsOn:'generateReleaseSources') {
     from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    archiveClassifier = 'sources'
 }
 
 tasks.withType(JavaCompile) {

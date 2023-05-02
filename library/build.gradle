@@ -4,13 +4,15 @@ apply plugin: 'signing'
 
 apply from: '../config/android-common.gradle'
 
-group = GROUP
 version = rootProject.versionName
 
 project.archivesBaseName = 'appauth'
 
-android.testOptions {
-    unitTests.includeAndroidResources = true
+android {
+    namespace 'net.openid.appauth'
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
 }
 
 dependencies {
@@ -23,6 +25,12 @@ dependencies {
 apply from: '../config/style.gradle'
 apply from: '../config/coverage.gradle'
 apply from: '../config/javadoc.gradle'
+
+android {
+    buildFeatures {
+        aidl true
+    }
+}
 
 artifacts {
     archives sourcesJar
